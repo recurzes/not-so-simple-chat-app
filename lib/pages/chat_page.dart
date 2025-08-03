@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:not_so_simple_chat_app/components/chat_bubble.dart';
 import 'package:not_so_simple_chat_app/components/my_textfield.dart';
 import 'package:not_so_simple_chat_app/services/auth/auth_service.dart';
 import 'package:not_so_simple_chat_app/services/chat/chat_service.dart';
@@ -26,7 +27,13 @@ class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(receiverEmail)),
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      appBar: AppBar(
+        title: Text(receiverEmail),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        foregroundColor: Colors.grey,
+      ),
       body: Column(
         children: [
           // Display all messages
@@ -75,9 +82,11 @@ class ChatPage extends StatelessWidget {
         : Alignment.centerLeft;
 
     return Column(
-      crossAxisAlignment: isCurrentUser ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+      crossAxisAlignment: isCurrentUser
+          ? CrossAxisAlignment.end
+          : CrossAxisAlignment.start,
       children: [
-        Container(alignment: alignment, child: Text(data["message"])),
+        ChatBubble(message: data["message"], isCurrentUser: isCurrentUser),
       ],
     );
   }
@@ -96,11 +105,14 @@ class ChatPage extends StatelessWidget {
           ),
 
           Container(
-            decoration: BoxDecoration(color: Colors.green, shape: BoxShape.circle),
+            decoration: BoxDecoration(
+              color: Colors.green,
+              shape: BoxShape.circle,
+            ),
             margin: const EdgeInsets.only(right: 25),
             child: IconButton(
               onPressed: sendMessage,
-              icon: const Icon(Icons.arrow_upward, color: Colors.white,),
+              icon: const Icon(Icons.arrow_upward, color: Colors.white),
             ),
           ),
         ],
