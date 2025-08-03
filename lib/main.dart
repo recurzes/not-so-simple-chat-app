@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:not_so_simple_chat_app/auth/auth_gate.dart';
-import 'package:not_so_simple_chat_app/auth/login_or_register.dart';
+import 'package:not_so_simple_chat_app/services/auth/auth_gate.dart';
+import 'package:not_so_simple_chat_app/services/auth/login_or_register.dart';
 import 'package:not_so_simple_chat_app/firebase_options.dart';
 import 'package:not_so_simple_chat_app/pages/register_page.dart';
 import '/pages/login_page.dart';
