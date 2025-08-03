@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "214450361951",
+    "project_id": "no-so-simple-chat-app",
+    "storage_bucket": "no-so-simple-chat-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214450361951:android:25f9b48fd9819a4909edea",
+        "android_client_info": {
+          "package_name": "com.notso.simple.chat.not_so_simple_chat_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYRD1qzjVmSvl8R0ghwEMhVlFr5Zaf6gE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
