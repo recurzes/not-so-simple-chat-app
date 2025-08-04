@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:not_so_simple_chat_app/themes/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -12,6 +14,31 @@ class SettingsPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         foregroundColor: Colors.grey,
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.primary,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        margin: const EdgeInsets.all(25),
+        padding: const EdgeInsets.all(16),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text("Dark Mode"),
+
+            Switch(
+              value: Provider.of<ThemeProvider>(
+                context,
+                listen: false,
+              ).isDarkMode,
+              onChanged: (value) => Provider.of<ThemeProvider>(
+                context,
+                listen: false,
+              ).toggleTheme(),
+            ),
+          ],
+        ),
       ),
     );
   }
