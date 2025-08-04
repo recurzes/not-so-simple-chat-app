@@ -4,7 +4,6 @@ import 'package:not_so_simple_chat_app/services/auth/auth_gate.dart';
 import 'package:not_so_simple_chat_app/firebase_options.dart';
 import 'package:not_so_simple_chat_app/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
-import '/themes/light_mode.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
